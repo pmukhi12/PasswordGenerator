@@ -119,15 +119,59 @@ function getUserOptions() {
   console.log(specialChosen);
   console.log(lengthChosen);
 
+  // Validate the length of the password length input 
+  if (lengthChosen < 8 || lengthChosen > 128) {
+    alert ("Please select a value between 8-128");
+  }
+  if (!lowerCaseChosen && !upperCaseChosen && !numericChosen && !specialChosen) {
+    alert ("Please select at least one character group")
+  }
+
+
+  var userOptions = {
+    lowerCaseChosen: lowerCaseChosen,
+    upperCaseChosen: upperCaseChosen,
+    numericChosen: numericChosen,
+    specialChosen: specialChosen,
+    lengthChosen: lengthChosen,
+  }
+
+  console.log(userOptions)
+
 }
 
 // function to generate password
 function generatePassword (){
-  var password = ""
+  var password = []
   var userOptions = getUserOptions()
-  if (lengthChosen < 8 || lengthChosen > 128) {
-    alert ("Please input a number value")
-  }
+  var mustHaves = []
+  var canHaves = []
+
+    // if upper 
+    if (userOptions.upperCaseChosen) {
+      // add upper char list to can haves
+      canHaves.concat(upperCaseChosen)
+      //add 1 upper char to must haves
+      mustHaves.push(upperCaseChosen[getRandomFromLength(upperCasedCharacters)])
+
+
+    }
+
+      // add to possible charechters
+   // if lower 
+      // add to mustHaves 1 upper char
+      // add to possible charechters
+   // if special 
+      // add to mustHaves 1 upper char
+      // add to possible charechters
+   // .
+   // .
+   // .
+   // loop through the lengthChosen
+      // add a random char to the passwordArray from the possible chars
+   // loop through must haves
+      // replace a chare in the password array
+   // passwordArray to string (join mathod)
 
   return password
 }
