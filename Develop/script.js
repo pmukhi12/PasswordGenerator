@@ -90,8 +90,9 @@ var upperCasedCharacters = [
 
 function getUserOptions {
   var lengthOfAnswer = length(window.prompt("How many characters would you like your password to be (min. 8, max. 28)"))
-
-  if lengthOfAnswer < 8;
+  if (lengthOfAnswer < 8) {
+    
+  }
   
   
 }
