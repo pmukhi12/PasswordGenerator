@@ -88,29 +88,35 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-function getUserOptions {
-  var lengthOfAnswer = length(window.prompt("How many characters would you like your password to be (min. 8, max. 28)"))
-  if (lengthOfAnswer < 8) {
-    
-  }
-  
-  
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+function getUserOptions() {
+
+// set variables for options
+
+  var lowerCaseChosen = false;
+  var upperCaseChosen = false;
+  var numericChosen = false;
+  var specialChosen = false;
+  var lengthChosen;
+
+  //assigning variables for options chosen
+  lowerCaseChosen = confirm("Would you like to use lower case letters in your password?");
+  upperCaseChosen = confirm("Would you like to use upper case letters in your password?");
+  numericChosen = confirm("Would you like to use numeric letters in your password?");
+  specialChosen = confirm("Would you like to use special letters in your password?");
+  lengthChosen = length(window.prompt("How many characters would you like your password to be (min. 8, max. 28)"));
+
 }
 
 
 
 
-
-
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
 }
