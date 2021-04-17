@@ -106,8 +106,30 @@ function getUserOptions() {
   upperCaseChosen = confirm("Would you like to use upper case letters in your password?");
   numericChosen = confirm("Would you like to use numeric letters in your password?");
   specialChosen = confirm("Would you like to use special letters in your password?");
-  lengthChosen = length(window.prompt("How many characters would you like your password to be (min. 8, max. 28)"));
+  lengthChosen = prompt("How many characters would you like your password to be (min. 8, max. 28)");
+  lengthChosen = parseInt(lengthChosen)
 
+  //log type of length chosen - should be integer
+  console.log(typeof lengthChosen)
+
+// logging all variables to verify that correct value is stored in variable
+  console.log(lowerCaseChosen);
+  console.log(upperCaseChosen);
+  console.log(numericChosen);
+  console.log(specialChosen);
+  console.log(lengthChosen);
+
+}
+
+// function to generate password
+function generatePassword (){
+  var password = ""
+  var userOptions = getUserOptions()
+  if (lengthChosen < 8 || lengthChosen > 128) {
+    alert ("Please input a number value")
+  }
+
+  return password
 }
 
 
